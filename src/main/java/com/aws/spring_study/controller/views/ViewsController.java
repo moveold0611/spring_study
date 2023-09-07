@@ -15,5 +15,4 @@ public class ViewsController {
         return "student_register";
     }
 
-
 }
