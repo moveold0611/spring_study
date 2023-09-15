@@ -22,7 +22,6 @@ function Main(props) {
     const requestGetUserListAll = () => {
         getUserListAll()
         .then(response => {            
-            console.log(response.data)
             setUserList(response.data);
         });
     }
@@ -51,7 +50,7 @@ function Main(props) {
 
     const handleRegisterClick = async () => {
         try {
-            if(userInput.username=== "" && 
+            if(userInput.username=== "" &&
                 userInput.name === "" &&
                 userInput.phone === "") {
                 alert("계정 정보를 입력하세요.")
