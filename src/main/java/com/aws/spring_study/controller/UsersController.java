@@ -4,7 +4,9 @@ package com.aws.spring_study.controller;
 import com.aws.spring_study.dto.RegisterUserReqDto;
 import com.aws.spring_study.entity.User;
 import com.aws.spring_study.repository.UserMappers;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,10 +14,12 @@ import java.io.Console;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 public class UsersController {
 
-    @Autowired
-    private UserMappers userMappers;
+//    @Autowired // IOC
+//    @Qualifier("service1") // 명시 가능한 Autowired
+    private final UserMappers userMappers;
 
     @CrossOrigin
     @PostMapping("/user")
